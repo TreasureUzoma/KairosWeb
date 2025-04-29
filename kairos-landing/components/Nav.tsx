@@ -14,7 +14,7 @@ const navigator: NavItem[] = [
   { name: "Home", link: "/" },
   { name: "About", link: "/#about" },
   { name: "Faq", link: "/#faqs" },
-  { name: "Teams", link: "/#teams" },
+  { name: "Teams", link: "/#teams" }
 ];
 export function DesktopNav() {
   const [toggle, setToggle] = useState<boolean>(false);
@@ -42,10 +42,7 @@ export function DesktopNav() {
           </ul>
           <div className="space-x-2 md:flex items-center hidden ">
             <Link href="/auth">
-              <Button
-                className="bg-white text-black  px-6 py-2 rounded-lg"
-                name="Get started"
-              />
+              <Button className="bg-white text-black  px-6 py-2 rounded-lg" name="Get started" />
             </Link>
           </div>
           <div className="md:hidden" onClick={Toggleme}>
@@ -70,10 +67,12 @@ function MobileNav() {
           </ul>
         </aside>
 
-        <Button
-          className=" px-8 py-2 text-[13px] rounded-lg w-full bg-white mt-4"
-          name="Get started"
-        />
+        <Link href="/auth">
+          <Button
+            className=" px-8 py-2 text-[13px] rounded-lg w-full bg-white mt-4"
+            name="Get started"
+          />
+        </Link>
       </nav>
     </div>
   );

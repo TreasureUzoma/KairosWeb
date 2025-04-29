@@ -1,5 +1,6 @@
 import Button from "./props/Button";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 function Hero() {
   return (
@@ -17,15 +18,16 @@ function Hero() {
           contest
         </h1>
         <p className="mt-4 text-gray-300 text-[15px] px-4">
-          The 30 Days of Code with VickyJay challenge is an engaging and
-          intensive programming contest designed to foster continuous learning
-          and project development
+          The 30 Days of Code with VickyJay challenge is an engaging and intensive programming
+          contest designed to foster continuous learning and project development
         </p>
 
-        <Button
-          className="bg-white w-[80%] md:w-auto   px-8 py-2 rounded-lg mt-8"
-          name="Get started"
-        />
+        <Link href="/auth">
+          <Button
+            className="bg-white w-[80%] md:w-auto   px-8 py-2 rounded-lg mt-8"
+            name="Get started"
+          />
+        </Link>
       </section>
     </main>
   );
