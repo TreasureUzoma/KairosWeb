@@ -224,7 +224,7 @@ export default function KairosLanding() {
             <div>
               <Image src="/logo.svg" alt="Kairos" width={100} height={32} className="mb-4" />
               <p className="text-sm text-muted-foreground">
-                The developer community platform built by programmers, for programmers.
+                The developer community platform built by developers, for developers.
               </p>
             </div>
 
