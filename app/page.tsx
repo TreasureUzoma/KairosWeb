@@ -1,11 +1,11 @@
-import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { Users, Shield, MessageSquare, ArrowRight, Zap, Brain } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { Users, Shield, MessageSquare, ArrowRight, Zap, Brain } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function KairosLanding() {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
@@ -35,23 +35,33 @@ export default function KairosLanding() {
       <header className="border-b backdrop-blur-sm sticky top-0 z-50 bg-background/80 relative">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center">
-            <Image src="/logo.svg" alt="Kairos" width={108} height={38} />
+            <Image src="/logo.svg" alt="Kairos" width={108} height={38} className="dark:invert" />
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="#features" className="text-sm font-medium hover:text-foreground/80 transition-colors">
+            <Link
+              href="#features"
+              className="text-sm font-medium hover:text-foreground/80 transition-colors"
+            >
               Features
             </Link>
-            <Link href="#about" className="text-sm font-medium hover:text-foreground/80 transition-colors">
+            <Link
+              href="#about"
+              className="text-sm font-medium hover:text-foreground/80 transition-colors"
+            >
               About
             </Link>
-            <Button variant="outline" size="sm">
-              Sign In
-            </Button>
+            <Link href="/auth">
+              <Button size="sm" className="bg-foreground text-background hover:bg-foreground/90">
+                Join Beta
+              </Button>
+            </Link>
+          </nav>
+          <Link href="/auth" className="md:hidden">
             <Button size="sm" className="bg-foreground text-background hover:bg-foreground/90">
               Join Beta
             </Button>
-          </nav>
+          </Link>
         </div>
       </header>
 
@@ -74,24 +84,31 @@ export default function KairosLanding() {
                   viewBox="0 0 400 20"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path d="M0,10 Q100,0 200,10 T400,10" stroke="currentColor" strokeWidth="2" fill="none" />
+                  <path
+                    d="M0,10 Q100,0 200,10 T400,10"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    fill="none"
+                  />
                 </svg>
               </span>
             </h1>
 
             <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-              A focused community where programmers share knowledge, discuss code, and solve problems together. No
-              noise, just pure developer content.
+              A focused community where programmers share knowledge, discuss code, and solve
+              problems together. No noise, just pure developer content.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="text-lg px-8 h-12 bg-foreground text-background hover:bg-foreground/90 shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                Join Community
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <Link href="/auth">
+                <Button
+                  size="lg"
+                  className="text-lg px-8 h-12 bg-foreground text-background hover:bg-foreground/90 shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  Join Community
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
 
             {/* Floating Elements */}
@@ -117,7 +134,14 @@ export default function KairosLanding() {
         <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.08]">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <pattern id="hexagons" x="0" y="0" width="100" height="87" patternUnits="userSpaceOnUse">
+              <pattern
+                id="hexagons"
+                x="0"
+                y="0"
+                width="100"
+                height="87"
+                patternUnits="userSpaceOnUse"
+              >
                 <polygon
                   points="50,1 85,25 85,62 50,86 15,62 15,25"
                   fill="none"
@@ -144,28 +168,32 @@ export default function KairosLanding() {
                 icon: Brain,
                 title: "Smart Discussions",
                 description:
-                  "AI-powered topic suggestions and intelligent thread organization for better conversations",
+                  "AI-powered topic suggestions and intelligent thread organization for better conversations"
               },
               {
                 icon: Shield,
                 title: "Expert Moderation",
-                description: "Community moderated by experienced developers and industry professionals",
+                description:
+                  "Community moderated by experienced developers and industry professionals"
               },
               {
                 icon: MessageSquare,
                 title: "Threaded Discussions",
-                description: "Organized conversations that stay focused and easy to follow with nested replies",
+                description:
+                  "Organized conversations that stay focused and easy to follow with nested replies"
               },
               {
                 icon: Users,
                 title: "Tech Communities",
-                description: "Dedicated spaces for specific languages, frameworks, and cutting-edge technologies",
+                description:
+                  "Dedicated spaces for specific languages, frameworks, and cutting-edge technologies"
               },
               {
                 icon: Zap,
                 title: "Real-time Updates",
-                description: "Live notifications and instant updates to keep you in the loop with your communities",
-              },
+                description:
+                  "Live notifications and instant updates to keep you in the loop with your communities"
+              }
             ].map((feature, index) => (
               <div
                 key={index}
@@ -203,16 +231,18 @@ export default function KairosLanding() {
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-8">Ready to join?</h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Connect with developers, share your knowledge, and grow your skills in a focused environment designed for
-              programmers.
+              Connect with developers, share your knowledge, and grow your skills in a focused
+              environment designed for programmers.
             </p>
-            <Button
-              size="lg"
-              className="text-lg px-12 h-12 bg-foreground text-background hover:bg-foreground/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-            >
-              Get Started
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link href="/auth">
+              <Button
+                size="lg"
+                className="text-lg px-12 h-12 bg-foreground text-background hover:bg-foreground/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              >
+                Get Started
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -222,7 +252,13 @@ export default function KairosLanding() {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <Image src="/logo.svg" alt="Kairos" width={100} height={32} className="mb-4" />
+              <Image
+                src="/logo.svg"
+                alt="Kairos"
+                width={100}
+                height={32}
+                className="mb-4 dark:invert"
+              />
               <p className="text-sm text-muted-foreground">
                 The developer community platform built by developers, for developers.
               </p>
@@ -293,11 +329,13 @@ export default function KairosLanding() {
           </div>
 
           <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t">
-            <p className="text-sm text-muted-foreground">© {currentYear} Kairos. Built with ❤️ by developers.</p>
+            <p className="text-sm text-muted-foreground">
+              © {currentYear} Kairos. Built with ❤️ by developers.
+            </p>
             <ThemeToggle />
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
